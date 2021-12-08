@@ -1,5 +1,6 @@
 ﻿using DShopCore.Data.Configuration;
 using DShopCore.Data.Entities;
+using DShopCore.Data.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace DShopCore.Data.EF
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //configuration using Fluent Api
             modelBuilder.ApplyConfiguration(new AppConfigConfiguration());
             modelBuilder.ApplyConfiguration(new ProductConfiguaration());
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
@@ -32,6 +34,9 @@ namespace DShopCore.Data.EF
             modelBuilder.ApplyConfiguration(new ProductTranslationConfiguration());
             modelBuilder.ApplyConfiguration(new PromotionConfiguration());
             modelBuilder.ApplyConfiguration(new TransactionConfiguration());
+
+            //Data_Seeding
+            modelBuilder.Seed();
 
             //base.OnModelCreating(modelBuilder);
         }
