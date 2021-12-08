@@ -1,0 +1,2 @@
+# DShopCore
+ASP.NET Core
