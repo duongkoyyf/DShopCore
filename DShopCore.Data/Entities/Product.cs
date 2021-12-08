@@ -21,5 +21,13 @@ namespace DShopCore.Data.Entities
         public DateTime   DataCreate { set; get; }
 
         public string SeoAlias { set; get; }
+
+        public List<ProductInCategory> ProductInCategories { set; get; }
+
+        public List<OrderDetail> OrderDetails { set; get; }
+
+        public List<Cart> Carts { get; set; }
+
+        public List<ProductTranslation> ProductTranslations { get; set; }
     }
 }
