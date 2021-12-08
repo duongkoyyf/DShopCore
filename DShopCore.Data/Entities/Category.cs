@@ -1,4 +1,4 @@
-﻿using DShopCore.Data.Enums;
+﻿    using DShopCore.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,5 +18,9 @@ namespace DShopCore.Data.Entities
         public int?  ParentId { set; get; }
 
         public Status  Status { set; get; }
+
+        public List<ProductInCategory> ProductInCategories { set; get; }
+
+        public List<CategoryTranslation> CategoryTranslations { get; set; }
     }
 }

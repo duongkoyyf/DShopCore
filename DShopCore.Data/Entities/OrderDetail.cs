@@ -18,5 +18,6 @@ namespace DShopCore.Data.Entities
 
         public Product Product { get; set; }
 
+
     }
 }
