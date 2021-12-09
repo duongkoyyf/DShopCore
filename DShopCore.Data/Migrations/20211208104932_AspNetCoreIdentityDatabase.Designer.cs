@@ -4,14 +4,16 @@ using DShopCore.Data.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DShopCore.Data.Migrations
 {
     [DbContext(typeof(DShopCoreContext))]
-    partial class DShopCoreContextModelSnapshot : ModelSnapshot
+    [Migration("20211208104932_AspNetCoreIdentityDatabase")]
+    partial class AspNetCoreIdentityDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -73,16 +75,6 @@ namespace DShopCore.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppRoles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("e58f3a6f-6cf3-47d3-8a16-d0b23b40cbd7"),
-                            ConcurrencyStamp = "4cb43297-dcca-4bc5-b018-a8b2573b5661",
-                            Description = "Administrator role",
-                            Name = "admin",
-                            NormalizedName = "admin"
-                        });
                 });
 
             modelBuilder.Entity("DShopCore.Data.Entities.AppUser", b =>
@@ -149,27 +141,6 @@ namespace DShopCore.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppUsers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("d78d9bdf-dace-4182-b43b-3255ca3ab9d7"),
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "bc1e7c50-8bf5-4506-bc5e-3a5ea5fc0cc5",
-                            Dob = new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "tedu.international@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Toan",
-                            LastName = "Bach",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "tedu.international@gmail.com",
-                            NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEsPRppS4UuNeycjJIo8ncUy+AKZ8nJdOSzi4s1thd7HquEN1pvW/HGLCov7HCvLig==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "",
-                            TwoFactorEnabled = false,
-                            UserName = "admin"
-                        });
                 });
 
             modelBuilder.Entity("DShopCore.Data.Entities.Cart", b =>
@@ -417,7 +388,7 @@ namespace DShopCore.Data.Migrations
                     b.Property<DateTime>("OrderDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2021, 12, 8, 18, 4, 52, 538, DateTimeKind.Local).AddTicks(9943));
+                        .HasDefaultValue(new DateTime(2021, 12, 8, 17, 49, 30, 950, DateTimeKind.Local).AddTicks(2400));
 
                     b.Property<string>("ShipAddress")
                         .IsRequired()
@@ -511,7 +482,7 @@ namespace DShopCore.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DataCreate = new DateTime(2021, 12, 8, 18, 4, 52, 554, DateTimeKind.Local).AddTicks(9474),
+                            DataCreate = new DateTime(2021, 12, 8, 17, 49, 30, 970, DateTimeKind.Local).AddTicks(158),
                             OriginnalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,
@@ -775,13 +746,6 @@ namespace DShopCore.Data.Migrations
                     b.HasKey("UserId", "RoleId");
 
                     b.ToTable("AppUserRoles");
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = new Guid("d78d9bdf-dace-4182-b43b-3255ca3ab9d7"),
-                            RoleId = new Guid("e58f3a6f-6cf3-47d3-8a16-d0b23b40cbd7")
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
