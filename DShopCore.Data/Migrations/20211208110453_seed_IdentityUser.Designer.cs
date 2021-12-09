@@ -4,14 +4,16 @@ using DShopCore.Data.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DShopCore.Data.Migrations
 {
     [DbContext(typeof(DShopCoreContext))]
-    partial class DShopCoreContextModelSnapshot : ModelSnapshot
+    [Migration("20211208110453_seed_IdentityUser")]
+    partial class seed_IdentityUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
