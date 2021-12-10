@@ -36,9 +36,11 @@ namespace DShopCore.Data.EF
             modelBuilder.ApplyConfiguration(new ProductTranslationConfiguration());
             modelBuilder.ApplyConfiguration(new PromotionConfiguration());
             modelBuilder.ApplyConfiguration(new TransactionConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductImageConfiguration());
 
             modelBuilder.ApplyConfiguration(new AppUserConfiguration());
             modelBuilder.ApplyConfiguration(new AppRoleConfiguration());
+
 
             modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims");
             modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRoles").HasKey(x=>new { x.UserId,x.RoleId});
@@ -55,6 +57,7 @@ namespace DShopCore.Data.EF
 
         public DbSet<Product> Products { set; get; }
         public DbSet<Category> Categories { set; get; }
+        public DbSet<ProductInCategory> ProductInCategories { set; get; }
         public DbSet<AppConfig> AppConfigs { set; get; }
         public DbSet<Cart> Carts { set; get; }
         public DbSet<CategoryTranslation> CategoryTranslations { set; get; }
@@ -65,5 +68,6 @@ namespace DShopCore.Data.EF
         public DbSet<ProductTranslation> ProductTranslations { set; get; }
         public DbSet<Promotion> Promotions { set; get; }
         public DbSet<Transaction> Transactions { set; get; }
+        public DbSet<ProductImage> ProductImages { set; get; }
     }
 }
